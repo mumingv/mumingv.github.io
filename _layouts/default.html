@@ -33,71 +33,67 @@
 <div class="content">
 	<div class="container">	
 		<div class="row">  		
-		
-		<div class="col-md-3 col-lg-3 hidden-xs hidden-sm aside1 fadein-left">
-			<div class="profile box-shadow center">
-				<div class="overlay"></div>
-				<div class="center gavatar">
-					<a href="/" class="profile_gavatar"><img class="circle" src="{{ site.gavatar }}"></a>
+			<div class="col-md-3 col-lg-3 hidden-xs hidden-sm aside1 fadein-left">
+				<div class="profile box-shadow center">
+					<div class="overlay"></div>
+					<div class="center gavatar">
+						<a href="/" class="profile_gavatar"><img class="circle" src="{{ site.gavatar }}"></a>
+					</div>
+					<div class="address">
+						<h5><span class="fa fa-map-marker"></span>Beijing China - 6</h5>
+					</div>
+					<div class="center profile_desc">
+						{{ site.profile_desc }}
+					</div>
 				</div>
-				<div class="address">
-					<h5><span class="fa fa-map-marker"></span>Beijing China - 5</h5>
+				
+				<div class="tag-cloud-text">
+					<a href="http://mumingv.github.io/pages/tags.html" title="标签" class="pjaxlink"><p class="center">标签</p></a>
 				</div>
-				<div class="center profile_desc">
-					{{ site.profile_desc }}
+				<div class="tag-cloud">	
+					<hr>
+					<div class="page-tag">
+							{% for tag in site.tags %}
+								<a href="http://mumingv.github.io/pages/tags.html#{{tag[0]}}" name="{{tag[0]}}" class="pjaxlink"><i class="fa fa-tags"></i>{{ tag[0] }}({{tag[1].size}})</a>
+							{% endfor %}
+					</div>					
 				</div>
+				<div class="clear"></div>
+				<div class="recentcome box-shadow">
+	 				<p>最近访客 <i class="fa fa-user"></i></p>
+	 				<ul class="ds-recent-visitors" data-num-items="15"></ul>
+	 			</div>
+
+
+	 			<div class="comment box-shadow">
+	 				<p>最新评论 <i class="fa fa-comments"></i></p>
+	 				<dl class="ds-recent-comments"  data-num-items="5" data-show-avatars="1" data-show-time="1" data-show-title="1"  data-show-admin="1" data-excerpt-length="50"></dl>
+	 			</div>
+	 			
+	 			<!-- 左侧div: 常用链接 -->
+	 			<div class="recentuse">
+	 					<p>常用链接</p>
+	 					<hr>
+	 					<ul>
+	 						暂无
+		 					<!-- <li><a href = "https://github.com/">github主页</a></li> -->
+	 					</ul>
+	 			</div>
+
+	 			<!-- 左侧div: 友情链接 -->
+				<div class="friendlink">
+	 					<p>友情链接</p>
+	 					<hr>
+	 					暂无				
+		 				<!-- <a href = "#">暂无</a> 					 -->
+	 			</div>
 			</div>
 			
-			<div class="tag-cloud-text">
-				<a href="http://mumingv.github.io/pages/tags.html" title="标签" class="pjaxlink"><p class="center">标签</p></a>
+			<div class="col-xs-12 col-sm-12 col-md-9 col-lg-9 box-shadow fadein-right aside2">					 		
+					<div class="page-content" id="pjax">{{content}}</div>				
 			</div>
-			<div class="tag-cloud">	
-				<hr>
-				<div class="page-tag">
-						{% for tag in site.tags %}
-							<a href="http://mumingv.github.io/pages/tags.html#{{tag[0]}}" name="{{tag[0]}}" class="pjaxlink"><i class="fa fa-tags"></i>{{ tag[0] }}({{tag[1].size}})</a>
-						{% endfor %}
-				</div>					
-			</div>
-			<div class="clear"></div>
-			<div class="recentcome box-shadow">
- 				<p>最近访客 <i class="fa fa-user"></i></p>
- 				<ul class="ds-recent-visitors" data-num-items="15"></ul>
- 			</div>
-
-
- 			<div class="comment box-shadow">
- 				<p>最新评论 <i class="fa fa-comments"></i></p>
- 				<dl class="ds-recent-comments"  data-num-items="5" data-show-avatars="1" data-show-time="1" data-show-title="1"  data-show-admin="1" data-excerpt-length="50"></dl>
- 			</div>
- 			
- 			<!-- 左侧div: 常用链接 -->
- 			<div class="recentuse">
- 					<p>常用链接</p>
- 					<hr>
- 					<ul>
- 						<li><a href = "#">暂无</a></li>
-	 					<!-- <li><a href = "https://github.com/">github主页</a></li> -->
- 					</ul>
- 			</div>
-
- 			<!-- 左侧div: 友情链接 -->
-			<div class="friendlink">
- 					<p>友情链接</p>
- 					<hr>						
-	 				<a href = "#">暂无</a> 					
- 			</div>
-			
-		</div>
-		
-		<div class="col-xs-12 col-sm-12 col-md-9 col-lg-9 box-shadow fadein-right aside2">					 		
-				<div class="page-content" id="pjax">{{content}}</div>				
-		</div>
-		
-
-
 		</div>	
-</div>
+	</div>
 </div>
 
 
@@ -107,6 +103,7 @@
 	<a class="weibo" href="{{ site.author.weibo }}"  target="_blank"></a>
 </div>
 
+<!-- 向下拖动后, 右侧底部滚动出来的那个小按钮 -->
 <div id="backtotop">
 		<a href="#"><i class="fa fa-arrow-circle-up"></i></a>
 </div>
@@ -114,7 +111,7 @@
 <div class="pjax_loading"></div>
 
 
-<!-- 底栏footer开始 -->
+<!-- 底栏footer -->
 <footer class="site-footer">
 
   <div class="wrapper">
