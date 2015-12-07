@@ -33,7 +33,7 @@ layout: default
 
 
 
-	{% if paginator.total_pages > 1 %}
+<!-- 	{% if paginator.total_pages > 1 %}
 		<div class="pagination center">
 			  {% if paginator.previous_page %}
 			    <a class="pjaxlink"  href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}"><span class="x1" style="margin-right:5px;"><i class="glyphicon glyphicon-chevron-left"></i> 上一页</span></a>
@@ -53,40 +53,8 @@ layout: default
 			   	 <a class="pjaxlink" href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}"><span class="x1" style="margin-left:5px;">下一页 <i class="glyphicon glyphicon-chevron-right"></i></span></a>
 			  {% endif %}
 		</div>
-	{% endif %}
+	{% endif %} -->
 
-<!--
-	<div class="pagination">
-	  {% if paginator.previous_page %}
-	    {% if paginator.page == 2 %}
-	      <a class="pagination-item newer" href="/">更新的博文</a>
-	    {% else %}
-	      <a class="pagination-item newer" href="/page{{paginator.previous_page}}">更新的博文</a>
-	    {% endif %}
-	  {% else %}
-	    <span class="pagination-item newer">已经是最新的博文</span>
-	  {% endif %}
-
-	  {% if paginator.next_page %}
-	    <a class="pagination-item older" href="/page{{paginator.next_page}}">更早的博文</a>
-	  {% else %}
-	    <span class="pagination-item older">已经是最后一页</span>
-	  {% endif %}
-	</div>
-
-
-  <ul class="post-list">
-    {% for post in site.posts %}
-      <li>
-        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
-
-        <h2>
-          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-        </h2>
-      </li>
-    {% endfor %}
-  </ul>
---> 
   <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
 
 </div>
