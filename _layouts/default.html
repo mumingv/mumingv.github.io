@@ -22,11 +22,10 @@
 	<script type="text/javascript" src="/assets/js/embed.js"></script>
 	<script type="text/javascript" src="/assets/js/ua-parser.js"></script>
 	<script>var duoshuoQuery = {short_name:"maydaycoder"};</script>
-
-
 </head>
 
 
+<!-- 主要内容body开始 -->
 <body>
 
 {% include header.html %}
@@ -42,7 +41,7 @@
 					<a href="/" class="profile_gavatar"><img class="circle" src="{{ site.gavatar }}"></a>
 				</div>
 				<div class="address">
-					<h5><span class="fa fa-map-marker"></span>Beijing China - 3</h5>
+					<h5><span class="fa fa-map-marker"></span>Beijing China - 5</h5>
 				</div>
 				<div class="center profile_desc">
 					{{ site.profile_desc }}
@@ -52,11 +51,11 @@
 			<div class="tag-cloud-text">
 				<a href="http://mumingv.github.io/pages/tags.html" title="标签" class="pjaxlink"><p class="center">标签</p></a>
 			</div>
-			<div class="tag-cloud ">	
+			<div class="tag-cloud">	
 				<hr>
 				<div class="page-tag">
 						{% for tag in site.tags %}
-							<a href="http://blademastercoder.github.io/pages/tags.html#{{tag[0]}}" name="{{tag[0]}}" class="pjaxlink"><i class="fa fa-tags"></i>{{ tag[0] }}({{tag[1].size}})</a>
+							<a href="http://mumingv.github.io/pages/tags.html#{{tag[0]}}" name="{{tag[0]}}" class="pjaxlink"><i class="fa fa-tags"></i>{{ tag[0] }}({{tag[1].size}})</a>
 						{% endfor %}
 				</div>					
 			</div>
@@ -65,25 +64,28 @@
  				<p>最近访客 <i class="fa fa-user"></i></p>
  				<ul class="ds-recent-visitors" data-num-items="15"></ul>
  			</div>
+
+
  			<div class="comment box-shadow">
  				<p>最新评论 <i class="fa fa-comments"></i></p>
  				<dl class="ds-recent-comments"  data-num-items="5" data-show-avatars="1" data-show-time="1" data-show-title="1"  data-show-admin="1" data-excerpt-length="50"></dl>
  			</div>
-
  			
+ 			<!-- 左侧div: 常用链接 -->
  			<div class="recentuse">
  					<p>常用链接</p>
  					<hr>
  					<ul>
-	 					<li><a href = "http://cs.nju.edu.cn/">南京大学计算机科学技术系</a></li>
-	 					<li><a href = "https://github.com/">github主页</a></li>
+ 						<li><a href = "#">暂无</a></li>
+	 					<!-- <li><a href = "https://github.com/">github主页</a></li> -->
  					</ul>
  			</div>
-			
+
+ 			<!-- 左侧div: 友情链接 -->
 			<div class="friendlink">
  					<p>友情链接</p>
  					<hr>						
-	 				<a href = "http://www.jcore.cn/">jcore</a> 					
+	 				<a href = "#">暂无</a> 					
  			</div>
 			
 		</div>
@@ -111,7 +113,69 @@
 
 <div class="pjax_loading"></div>
 
-{% include footer.html %}
+
+<!-- 底栏footer开始 -->
+<footer class="site-footer">
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">{{ site.title }}'s blog</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col  footer-col-1">
+        <ul class="contact-list">
+          <li>{{ site.title }}</li>
+          <li><a href="mailto:{{ site.author.email }}">{{ site.author.email }}</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col  footer-col-2">
+        <ul class="social-media-list">
+          {% if site.author.github%}
+          <li>
+            <a class="github" href="{{ site.author.github }}"  target="_blank"></a>
+          </li>
+          {% endif %}
+
+          {% if site.author.weibo %}
+          <li>
+            <a class="weibo" href="{{ site.author.weibo }}"  target="_blank"></a>
+          </li>
+          {% endif %}
+        </ul>
+      </div>
+
+      <div class="footer-col  footer-col-3">
+        <p class="text">{{ site.description }}</p>
+      </div>
+    </div>
+    <div class="center sitedesc">
+    	Powered by <a href ="http://jekyllrb.com/">Jekyll</a>  |  © 2015 GY  |  Hosted on <a href="https://github.com/{{ site.author.github_username }}/{{ site.author.github_username }}.github.io"> Github</a>
+    </div>
+  </div>
+	
+ 
+  <script type="text/javascript">
+	  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+	  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+	  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+	  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+	  
+	  _st('install','yeJZSeBF6XzYF_iNno8P','2.0.0');
+  </script>
+  
+  <script type="text/javascript" src="/assets/js/jquery.js"></script>
+  <script type="text/javascript" src="/assets/js/bootstrap.js"></script>
+  <script type="text/javascript" src="/assets/js/jquery.pjax.js"></script> 
+  <script type="text/javascript" src="/assets/js/echarts.js"></script> 
+  <script type="text/javascript" src="/assets/js/prettify/prettify.js"></script>
+  <script type="text/javascript" src="/assets/js/stickUp.min.js"></script>
+  <script type="text/javascript" src="/assets/js/fancybox/jquery.fancybox.pack.js"></script>
+  <script type="text/javascript" src="/assets/js/fancybox/jquery.mousewheel-3.0.6.pack.js"></script>
+  <script type="text/javascript" src="/assets/js/main.js"></script>
+  <link rel="stylesheet" href="{{ "/assets/css/duoshuo.css" | prepend: site.baseurl }}"> 
+</footer>
+
 
 </body>
 
