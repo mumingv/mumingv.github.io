@@ -36,7 +36,7 @@ favicon : /assets/img/favicon.png
 
 #profile 个人信息
 
-profile_desc : You have to believe in yourself. That is the secret of success.
+profile_desc : You have to believe in yourself.<br>That is the secret of success.
 
 # 首页除了最新文章外显示分类
 cates: 
