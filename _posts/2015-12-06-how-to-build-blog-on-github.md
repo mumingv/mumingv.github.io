@@ -1,9 +1,9 @@
 ---
 layout: post
 title: 如何在github上搭建博客
-category: 技术
-tags:  [博客]
-description: 
+category: 杂货铺
+tags:  [Github, Jekyll]
+description: None
 ---
 
 ## github
