@@ -1,14 +1,17 @@
 encoding: UTF-8
 
 permalink: /:year-:month-:day/:title.html
-paginate: 5
+###为了使用jekyll, 去掉paginate配置
+# paginate: 5
 markdown: kramdown
 
 kramdown:
   input: GFM
 
-highlighter: pygments
-pygments: true
+###为了使用jekyll, 使用rouge替代pygments, 作为语法高亮的方案
+# highlighter: pygments
+# pygments: true
+highlighter: rouge
 
 # 作者信息
 author: 
