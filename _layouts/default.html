@@ -9,7 +9,7 @@
 	<title>{{ site.title }} | {{ page.title }}</title>
 	<meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
 
-
+	<!-- 加载各种CSS -->
 	<link rel="stylesheet" href="{{ "/assets/css/bootstrap.css" | prepend: site.baseurl }}">
 	<link rel="stylesheet" href="{{ "/assets/css/font-awesome.css" | prepend: site.baseurl }}">
 	<link rel="stylesheet" href="{{ "/assets/js/fancybox/jquery.fancybox.css" | prepend: site.baseurl }}" media="screen">
@@ -18,7 +18,6 @@
 	<link rel="shortcut icon" href="{{ site.favicon }}" />
 	<link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
 	<link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}" />
-	<script src="http://echarts.baidu.com/build/dist/echarts.js"></script>
 	<script type="text/javascript" src="/assets/js/embed.js"></script>
 	<script type="text/javascript" src="/assets/js/ua-parser.js"></script>
 	<script>var duoshuoQuery = {short_name:"maydaycoder"};</script>
@@ -28,8 +27,61 @@
 <!-- 主要内容body开始 -->
 <body>
 
-{% include header.html %}
-  
+<!-- 顶栏header, 应该是用bootstrap做的?? -->
+<!-- {% include header.html %} -->
+<header class="site-header">
+	<div class="container">
+		<div class="row">
+			<nav class="navbar navbar-default" role="navigation">
+				    <div class="navbar-header col-xs-12 col-sm-12 col-md-3 col-lg-3 center" >
+				   	      <button type="button" class="navbar-toggle" data-toggle="collapse"  data-target="#example-navbar-collapse">
+					         <span class="icon-bar"></span>
+					         <span class="icon-bar"></span>
+					         <span class="icon-bar"></span>
+					      </button>
+					      <div class="sitehome">
+						 	<a href="{{ site.baseurl }}/" title="首页"><i class="fa fa-home fa-2x homeicon"></i><a><a class="site-title" href="{{ site.baseurl }}/">{{ site.title }}</a>
+						</div>
+				   	</div>
+				  
+				  	<!-- 顶部的大分类 -->
+				  	<div class="col-md-6 col-lg-6 hidden-xs hidden-sm center">
+							<nav class="site-nav">
+								        <ul class="nav nav-pills">
+											<!-- <li class="select"><a class="page-link pjaxlink" href="/pages/read.html">读书</a></li> -->
+											<!-- <li class="select"><a class="page-link pjaxlink" href="/pages/class.html">分类</a></li> -->
+											<li class="select"><a class="page-link pjaxlink" href="/pages/archive.html">文章</a></li>
+											<!-- <li class="select"><a class="page-link pjaxlink" href="/pages/about.html">关于</a></li> -->
+								        </ul>
+							</nav>
+				  	</div>
+				  
+				  	<div class="col-md-3 col-lg-3 hidden-xs hidden-sm">
+				   		<div class="search">
+						  	<input type="text" class="search-query st-default-search-input" placeholder="Search">
+				   		</div>
+				   	</div>
+				   
+				   	<!-- 适配手机的, 先不管 -->
+				    <!--
+ 				   	<div class="collapse navbar-collapse" id="example-navbar-collapse">
+						<ul class="nav navbar-nav phone-nav center">
+							<li class="phoneselect"><a class="page-link pjaxlink" href="{{site.baseurl}}/"><i class="fa fa-home"></i>&nbsp;首页</a></li>
+							<li class="phoneselect"><a class="page-link pjaxlink" href="/pages/read.html"><i class="fa fa-book"></i>&nbsp;读书</a></li>
+							<li class="phoneselect"><a class="page-link pjaxlink" href="/pages/class.html"><i class="fa fa-tasks"></i>&nbsp;分类</a></li>
+							<li class="phoneselect"><a class="page-link pjaxlink" href="/pages/tags.html"><i class="fa fa-tags"></i>&nbsp;标签</a></li>
+							<li class="phoneselect"><a class="page-link pjaxlink" href="/pages/archive.html"><i class="fa fa-archive"></i>&nbsp;归档</a></li>
+							<li class="phoneselect"><a class="page-link pjaxlink" href="/pages/about.html"><i class="fa fa-user"></i>&nbsp;关于</a></li>
+						</ul>
+				   	</div>
+				   	-->
+			</nav>
+		</div>
+	</div>
+</header>
+
+
+<!-- 正文(介于header和footer之间) -->
 <div class="content">
 	<div class="container">	
 		<div class="row">  		
@@ -41,7 +93,7 @@
 						<a href="/" class="profile_gavatar"><img class="circle" src="{{ site.gavatar }}"></a>
 					</div>
 					<div class="address">
-						<h5><span class="fa fa-map-marker"></span>Beijing China - 10</h5>
+						<h5><span class="fa fa-map-marker"></span>Beijing China - 12</h5>
 					</div>
 					<div class="center profile_desc">
 						{{ site.profile_desc }}
@@ -100,7 +152,7 @@
 	</div>
 </div>
 
-
+<!-- 这个是什么鬼? -->
 <div class="profile_social">
 	<a class="rss" href="{{ site.rss_url }}" target="_blank"></a>
 	<a class="github" href="{{ site.author.github }}"  target="_blank"></a>
@@ -117,7 +169,6 @@
 
 <!-- 底栏footer -->
 <footer class="site-footer">
-
 	<div class="wrapper">
 		<!-- <h2 class="footer-heading">{{ site.title }}'s blog</h2> -->
 
@@ -162,6 +213,7 @@
 	</div>
 
 
+	<!-- 加载各种JS -->
 	<script type="text/javascript">
 		(function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
 		(w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
@@ -170,7 +222,6 @@
 
 		_st('install','yeJZSeBF6XzYF_iNno8P','2.0.0');
 	</script>
-
 	<script type="text/javascript" src="/assets/js/jquery.js"></script>
 	<script type="text/javascript" src="/assets/js/bootstrap.js"></script>
 	<script type="text/javascript" src="/assets/js/jquery.pjax.js"></script> 
@@ -180,7 +231,7 @@
 	<script type="text/javascript" src="/assets/js/fancybox/jquery.fancybox.pack.js"></script>
 	<script type="text/javascript" src="/assets/js/fancybox/jquery.mousewheel-3.0.6.pack.js"></script>
 	<script type="text/javascript" src="/assets/js/main.js"></script>
-	<link rel="stylesheet" href="{{ "/assets/css/duoshuo.css" | prepend: site.baseurl }}"> 
+	<link rel="stylesheet" href="{{ "/assets/css/duoshuo.css" | prepend: site.baseurl }}">
 </footer>
 
 
