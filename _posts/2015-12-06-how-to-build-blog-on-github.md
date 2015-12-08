@@ -2,7 +2,7 @@
 layout: post
 title: 如何在github上搭建博客
 category: 杂货铺
-tags: [Github, Jekyll]
+tags: [Github, Jekyll, Blog]
 description: None
 ---
 
