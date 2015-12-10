@@ -14,6 +14,7 @@ description: None
 
 # Demo代码
 
+```php
 <?php
 
     // 8个魔术常量(不区分大小写)
@@ -118,6 +119,7 @@ description: None
     echo "</br>";
 
 ?>
+```
 
 # 输出结果
 
