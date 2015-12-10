@@ -15,112 +15,110 @@ description: None
 # Demo代码
 
 ```php
-
 <?php
 
-    // 8个魔术常量(不区分大小写)
+// 8个魔术常量(不区分大小写)
 
-    namespace NAMESPACE_NAME;
-    /**
-     * __FILE__ : 文件名称, 字符串类型
-     */
-    echo '__FILE__: ';
-    var_dump(__file__); 
-    echo "</br>";
-    echo "</br>";
-
-
-    /**
-     * __LINE__ : 行号, 整型
-     */
-    echo '__LINE__: ';
-    var_dump(__LINE__); 
-    echo "</br>";
-    echo "</br>";
+namespace NAMESPACE_NAME;
+/**
+ * __FILE__ : 文件名称, 字符串类型
+ */
+echo '__FILE__: ';
+var_dump(__file__); 
+echo "</br>";
+echo "</br>";
 
 
-    /**
-     * __DIR__ : 目录, 字符串类型
-     * 注: 返回结果不包含结尾的"/"(根目录除外)
-     */
-    echo '__DIR__: ';
-    var_dump(__DIR__); 
-    echo "</br>";
-    echo "</br>";
+/**
+ * __LINE__ : 行号, 整型
+ */
+echo '__LINE__: ';
+var_dump(__LINE__); 
+echo "</br>";
+echo "</br>";
 
 
-    /**
-     * __FUNCTION__ : 函数名称，字符串类型
-     * 注:  1. 全局函数会
-     */
+/**
+ * __DIR__ : 目录, 字符串类型
+ * 注: 返回结果不包含结尾的"/"(根目录除外)
+ */
+echo '__DIR__: ';
+var_dump(__DIR__); 
+echo "</br>";
+echo "</br>";
+
+
+/**
+ * __FUNCTION__ : 函数名称，字符串类型
+ * 注:  1. 全局函数会
+ */
+function showFunction() {
+    echo "__FUNCTIN__: ";
+    var_dump(__FUNCTION__);
+}
+showFunction();
+echo "</br>";
+echo "</br>";
+
+
+/**
+ * __CLASS__ : 类名称，字符串类型
+ * __METHOD__ : 方法名称，字符串类型(注意和函数名称的区别: 方法名称包含类名称, 函数名称不包含类名称)
+ */
+class BaseClass {
+    function showClass() {
+        echo "__CLASS__: ";
+        var_dump(__CLASS__);
+        echo "</br>";
+    }
     function showFunction() {
-        echo "__FUNCTIN__: ";
+        echo "&nbsp;&nbsp;__FUNCTION__ in class: ";
         var_dump(__FUNCTION__);
+        echo "</br>";
     }
-    showFunction();
-    echo "</br>";
-    echo "</br>";
-
-
-    /**
-     * __CLASS__ : 类名称，字符串类型
-     * __METHOD__ : 方法名称，字符串类型(注意和函数名称的区别: 方法名称包含类名称, 函数名称不包含类名称)
-     */
-    class BaseClass {
-        function showClass() {
-            echo "__CLASS__: ";
-            var_dump(__CLASS__);
-            echo "</br>";
-        }
-        function showFunction() {
-            echo "&nbsp;&nbsp;__FUNCTION__ in class: ";
-            var_dump(__FUNCTION__);
-            echo "</br>";
-        }
-        function showMethod() {
-            echo "&nbsp;&nbsp;__METHOD__ in class: ";
-            var_dump(__METHOD__);
-            echo "</br>";
-        }
+    function showMethod() {
+        echo "&nbsp;&nbsp;__METHOD__ in class: ";
+        var_dump(__METHOD__);
+        echo "</br>";
     }
-    $obj = new BaseClass();
-    $obj->showClass();
-    $obj->showFunction();
-    $obj->showMethod();
-    echo "</br>";
+}
+$obj = new BaseClass();
+$obj->showClass();
+$obj->showFunction();
+$obj->showMethod();
+echo "</br>";
 
 
-    /**
-     * __TRAIT__ : Traits名称, 字符串类型，从PHP5.4.0开始支持
-     */
-    /*
-    trait HelloWorld {
-        public function traitName() {
-            echo __TRAIT__;
-            //echo "__TRAIT__";
-        }
-    } 
-    class A {
-        use HelloWorld;
+/**
+ * __TRAIT__ : Traits名称, 字符串类型，从PHP5.4.0开始支持
+ */
+/*
+trait HelloWorld {
+    public function traitName() {
+        echo __TRAIT__;
+        //echo "__TRAIT__";
     }
-    echo '__TRAIT__: ';
-    $obj = new A();
-    $obj->traitName();
-    echo "</br>";
-    echo "</br>";
-    */
+} 
+class A {
+    use HelloWorld;
+}
+echo '__TRAIT__: ';
+$obj = new A();
+$obj->traitName();
+echo "</br>";
+echo "</br>";
+*/
 
 
-    /**
-     * __NAMESPACE__ : 命名空间名称，字符串类型
-     */
-    echo '__NAMESPACE__: ';
-    var_dump(__NAMESPACE__); 
-    echo "</br>";
-    echo "</br>";
+/**
+ * __NAMESPACE__ : 命名空间名称，字符串类型
+ */
+echo '__NAMESPACE__: ';
+var_dump(__NAMESPACE__); 
+echo "</br>";
+echo "</br>";
 
 ?>
-
 ```
 
 # 输出结果
