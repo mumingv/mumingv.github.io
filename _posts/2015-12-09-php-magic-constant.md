@@ -63,7 +63,8 @@ echo "</br>";
 
 /**
  * __CLASS__ : 类名称，字符串类型
- * __METHOD__ : 方法名称，字符串类型(注意和函数名称的区别: 方法名称包含类名称, 函数名称不包含类名称)
+ * __METHOD__ : 方法名称，字符串类型
+ * 注意__METHOD__和__FUNCTION__的区别: 方法名称包含类名称, 函数名称不包含类名称
  */
 class BaseClass {
     function showClass() {
