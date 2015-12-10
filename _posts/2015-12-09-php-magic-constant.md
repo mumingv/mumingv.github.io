@@ -2,7 +2,7 @@
 layout: post
 title: PHP的魔术常量
 category: PHP
-tags: [Php]
+tags: [PHP]
 description: None
 ---
 
