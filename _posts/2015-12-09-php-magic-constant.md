@@ -93,7 +93,6 @@ echo "</br>";
 /**
  * __TRAIT__ : Traits名称, 字符串类型，从PHP5.4.0开始支持
  */
-/*
 trait HelloWorld {
     public function traitName() {
         echo __TRAIT__;
@@ -108,7 +107,6 @@ $obj = new A();
 $obj->traitName();
 echo "</br>";
 echo "</br>";
-*/
 
 
 /**
