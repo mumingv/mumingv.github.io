@@ -21,8 +21,8 @@ PHP的数组可以简单理解为key/value（键值对）的组合，根据是�
 **空数组**
 
 <font size='5'>空数组</font>
-
-
+<font size='4'>空数组</font>
+<font size='3'>空数组</font>
 
 让我们从创建一个空数组开始，
 
